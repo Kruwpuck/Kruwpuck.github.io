@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Mengambil data dari _config.yml -->
+    <title>Portofolio Ihab Hasanain</title>
+    <meta name="description" content="Mahasiswa Teknologi Informatika dengan minat di Networking dan DevOps.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #1a1a1a;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #ef4444; /* Merah */
+            margin-top: 8px;
+            border-radius: 9999px;
+        }
+        /* Style untuk hover pada kartu proyek */
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-red-600">Ihab.</a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <a href="#hero" class="hover:text-red-600 transition duration-300">Beranda</a>
+                <a href="#about" class="hover:text-red-600 transition duration-300">Tentang Saya</a>
+                <a href="#projects" class="hover:text-red-600 transition duration-300">Proyek</a>
+                <a href="#achievements" class="hover:text-red-600 transition duration-300">Prestasi</a>
+                <a href="#contact" class="hover:text-red-600 transition duration-300">Kontak</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm border-t border-gray-100 py-2">
+            <a href="#hero" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Beranda</a>
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tentang Saya</a>
+            <a href="#projects" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Proyek</a>
+            <a href="#achievements" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Prestasi</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center bg-gray-100 pt-20" style="background-image: url('https://placehold.co/1200x800/f7f7f7/e2e2e2?text=Background+Image+Placeholder'); background-size: cover; background-position: center;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Text Content -->
+                    <div class="bg-white/90 p-8 rounded-xl shadow-2xl backdrop-blur-sm">
+                        <p class="text-sm font-semibold text-red-600 uppercase mb-2">UNDERGRADUATE STUDENT</p>
+                        <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight text-gray-900 mb-4">
+                            Halo, Saya <span class="text-red-600">Ihab Hasanain</span>.
+                        </h1>
+                        <p class="text-xl text-gray-700 mb-8">
+                            Seorang pembelajar yang bersemangat di bidang **Networking** dan **DevOps**, dengan dasar kuat di **Informatics Technology**.
+                        </p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <!-- Link ke dokumen CV -->
+                            <a href="./assets/CV ATS IHAB HASANAIN AKMAL.pdf" target="_blank" class="flex items-center justify-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
+                                Lihat CV ATS
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text ml-2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                            </a>
+                            <!-- Link ke portfolio PDF -->
+                            <a href="./assets/Portfolio.pdf" target="_blank" class="flex items-center justify-center bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
+                                Lihat Portfolio PDF
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open ml-2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Image Placeholder -->
+                    <div class="hidden md:flex justify-center">
+                        <!-- Ganti dengan foto profil Anda (misalnya: assets/profile.jpg) -->
+                        <div class="w-72 h-72 lg:w-96 lg:h-96 bg-gray-300 rounded-full shadow-2xl border-4 border-red-600 overflow-hidden">
+                            <img src="./assets/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x400/374151/ffffff?text=FOTO+IHAB';" alt="Foto Profil Ihab Hasanain" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-4xl font-bold text-gray-900 mb-12">Tentang Saya</h2>
+                <div class="grid lg:grid-cols-3 gap-10">
+                    <div class="lg:col-span-2">
+                        <p class="text-gray-700 text-lg mb-4">
+                            Saya **Ihab Hasanain Akmal**, seorang mahasiswa aktif dengan IPK 3.96 di bidang **Informatics Technology** dari Telkom University. Didorong oleh rasa ingin tahu yang mendalam, saya bersemangat dalam eksplorasi arsitektur jaringan, infrastruktur, dan teknologi terkini.
+                        </p>
+                        <p class="text-gray-700 text-lg mb-6">
+                            Minat utama saya berfokus pada **Networking** dan **DevOps**, di mana saya dapat mengaplikasikan keterampilan teknis dan analitis untuk membangun infrastruktur sistem yang andal dan efisien. Saya memiliki keahlian dalam **IoT**, **Computer Architecture**, **Network Architecture**, dan **Security**.
+                        </p>
+
+                        <!-- Education and Skills Summary -->
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 mt-6">Pendidikan & Keahlian</h3>
+                        <div class="grid sm:grid-cols-2 gap-6 text-gray-600">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Pendidikan</h4>
+                                <ul class="space-y-1 list-disc list-inside">
+                                    <li>**S1 Teknologi Informatika** (IPK 3.96) - Telkom University (2023 - Sekarang)</li>
+                                    <li>**SMK Teknik Komputer Jaringan** (GPA 89.86) - SMK Telkom Malang (Lulus 2020)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Keahlian Teknis (Contoh)</h4>
+                                <ul class="space-y-1 list-disc list-inside">
+                                    <li>**Networking:** Open5GS, O-RAN, RIC, CCNA, Mikrotik</li>
+                                    <li>**DevOps:** Docker, Kubernetes, Nephio, GitTea</li>
+                                    <li>**Programming:** Python, Go-Lang, Java, C++</li>
+                                    <li>**Data Science/ML:** TensorFlow, Deep Learning, Computer Vision</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sidebar Contact/Quick Links -->
+                    <div class="lg:col-span-1 bg-gray-50 p-6 rounded-xl shadow-inner border border-gray-200">
+                        <h3 class="text-xl font-bold text-red-600 mb-4 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-contact-2 mr-2"><path d="M16 18a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2"/><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="10" cy="9" r="2"/><line x1="8" x2="12" y1="21" y2="21"/><path d="M21 15h-4"/></svg>
+                            Hubungi Saya
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-3 text-red-600"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                <a href="mailto:ihabb.hasanain@gmail.com" class="hover:text-red-600 transition">ihabb.hasanain@gmail.com</a>
+                            </li>
+                            <li class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-3 text-red-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-7.53-7.53 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.08 2h3a2 2 0 0 1 2 1.73c.09.94.31 1.89.65 2.79 1.25 2.5 1.52 4.14 0 6.09-.7.94-1.12 2-1.35 3.1-.15.7-.35 1.74-.95 2.34-1.46 1.46-3.83 1.46-5.29 0l-1.46-1.46-1.46-1.46z"/></svg>
+                                <a href="https://wa.me/6285117026096" target="_blank" class="hover:text-red-600 transition">0851-1702-6096</a>
+                            </li>
+                            <li class="flex items-center">
+                                <!-- Menggunakan ikon LinkedIn -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin mr-3 text-red-600"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                <a href="https://linkedin.com/in/IhabHasanain" target="_blank" class="hover:text-red-600 transition">Ihab Hasanain</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-4xl font-bold text-gray-900 mb-12">Proyek Pilihan</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project Card 1: TRAFFIC LOAD-BASED "CELL SLEEP MODE" AUTOMATION -->
+                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl group relative">
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=5G+Network+Diagram" alt="5G Cell Sleep Mode" class="w-full h-48 object-cover transition duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=5G+Network+Diagram';">
+                        <div class="p-6">
+                            <span class="inline-block bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">5G Network/O-RAN</span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Traffic Load-Based "Cell Sleep Mode" Automation</h3>
+                            <p class="text-gray-600 text-sm">Proyek riset pribadi mengenai efisiensi energi di RAN 5G (5GC dan O-RAN) dengan mengotomatisasi mode tidur seluler berdasarkan beban lalu lintas.</p>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-red-600/90 text-white flex items-center justify-center p-4 opacity-0 transition duration-500 transform translate-y-full group-hover:translate-y-0 rounded-xl">
+                            <a href="./assets/Portfolio.pdf#page=5" target="_blank" class="text-white text-lg font-semibold border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-red-600 transition">Lihat Detail di PDF</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: SDN BASED IOT NETWORK -->
+                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl group relative">
+                        <img src="https://placehold.co/600x400/10b981/ffffff?text=SDN+IoT+Architecture" alt="SDN IoT Network" class="w-full h-48 object-cover transition duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/10b981/ffffff?text=SDN+IoT+Architecture';">
+                        <div class="p-6">
+                            <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">IoT/Network/SDN</span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">SDN Based IoT Network</h3>
+                            <p class="text-gray-600 text-sm">Mengubah Ryu controller dari monolitik menjadi berbasis microservice dan mengimplementasikannya dalam kasus nyata IoT.</p>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-red-600/90 text-white flex items-center justify-center p-4 opacity-0 transition duration-500 transform translate-y-full group-hover:translate-y-0 rounded-xl">
+                            <a href="./assets/Portfolio.pdf#page=6" target="_blank" class="text-white text-lg font-semibold border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-red-600 transition">Lihat Detail di PDF</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: LEARNING CONTAINERIZATION (Docker) -->
+                    <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-2xl group relative">
+                        <img src="https://placehold.co/600x400/34d399/ffffff?text=Docker+Containerization" alt="Docker Containerization" class="w-full h-48 object-cover transition duration-500 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/600x400/34d399/ffffff?text=Docker+Containerization';">
+                        <div class="p-6">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">DevOps/Cloud</span>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Learning Containerization</h3>
+                            <p class="text-gray-600 text-sm">Dokumentasi perjalanan belajar containerization, penting untuk infrastruktur DevOps modern. (Ada link di PDF yang bisa Anda update)</p>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-red-600/90 text-white flex items-center justify-center p-4 opacity-0 transition duration-500 transform translate-y-full group-hover:translate-y-0 rounded-xl">
+                            <a href="./assets/Portfolio.pdf#page=9" target="_blank" class="text-white text-lg font-semibold border-2 border-white px-4 py-2 rounded-lg hover:bg-white hover:text-red-600 transition">Lihat Detail di PDF</a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="./assets/Portfolio.pdf" target="_blank" class="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-md">
+                        Lihat Semua Proyek di Portfolio PDF &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-4xl font-bold text-gray-900 mb-12">Prestasi & Penghargaan</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Achievement Card 1: 2nd Prize Network Track APAC -->
+                    <div class="bg-red-50 p-6 rounded-xl shadow-lg border-t-4 border-red-600">
+                        <div class="text-4xl font-extrabold text-red-600 mb-2">2nd Prize</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Huawei ICT Competition 2024-2025 (APAC)</h3>
+                        <p class="text-gray-600">Pencapaian luar biasa di tingkat Asia Pasifik untuk Network Track.</p>
+                        <a href="./assets/Portfolio.pdf#page=4" target="_blank" class="text-sm text-red-600 hover:text-red-700 font-medium mt-3 inline-block">Lihat Sertifikat &rarr;</a>
+                    </div>
+
+                    <!-- Achievement Card 2: 2nd Winner Network Track National -->
+                    <div class="bg-red-50 p-6 rounded-xl shadow-lg border-t-4 border-red-600">
+                        <div class="text-4xl font-extrabold text-red-600 mb-2">2nd Winner</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Huawei ICT Competition 2024-2025 (National)</h3>
+                        <p class="text-gray-600">Juara kedua di tingkat Nasional untuk Network Track.</p>
+                        <a href="./assets/Portfolio.pdf#page=4" target="_blank" class="text-sm text-red-600 hover:text-red-700 font-medium mt-3 inline-block">Lihat Sertifikat &rarr;</a>
+                    </div>
+
+                    <!-- Achievement Card 3: 10th Best Graduate -->
+                    <div class="bg-red-50 p-6 rounded-xl shadow-lg border-t-4 border-red-600">
+                        <div class="text-4xl font-extrabold text-red-600 mb-2">Top 10</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Best Graduate (High School)</h3>
+                        <p class="text-gray-600">Menjadi salah satu dari 10 Lulusan Terbaik di masa SMA/SMK.</p>
+                        <a href="./assets/Portfolio.pdf#page=4" target="_blank" class="text-sm text-red-600 hover:text-red-700 font-medium mt-3 inline-block">Lihat Detail &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900 text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="section-title mx-auto text-4xl font-bold text-white mb-6">Mari Berkolaborasi</h2>
+                <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+                    Saya selalu terbuka untuk peluang kolaborasi, proyek riset, atau posisi yang menantang di bidang Networking dan DevOps.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- LinkedIn Link -->
+                    <a href="https://linkedin.com/in/IhabHasanain" target="_blank" class="flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin mr-2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        LinkedIn
+                    </a>
+
+                    <!-- Email Link -->
+                    <a href="mailto:ihabb.hasanain@gmail.com" class="flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Email Saya
+                    </a>
+
+                    <!-- WhatsApp Link -->
+                    <a href="https://wa.me/6285117026096" target="_blank" class="flex items-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square mr-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2025 Portofolio Ihab Hasanain. Dibuat dengan &hearts; dan Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <!-- Script for mobile menu toggle and Lucide icon rendering -->
+    <script>
+        // Inisialisasi ikon Lucide
+        lucide.createIcons();
+
+        // Logika untuk Mobile Menu
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
