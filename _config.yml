@@ -1,0 +1,64 @@
+# =============================================================
+# Konfigurasi Dasar GitHub Pages (Menggunakan Jekyll)
+# =============================================================
+
+# Judul utama situs Anda
+title: Portofolio Ihab Hasanain
+
+# Deskripsi singkat (muncul di hasil pencarian)
+description: Mahasiswa Teknologi Informatika dengan minat di Networking dan DevOps.
+
+# URL dasar situs Anda (Ganti dengan nama repository jika Anda menggunakannya)
+# Jika menggunakan https://[username].github.io, biarkan baseurl kosong.
+baseurl: "" 
+
+# URL lengkap situs Anda (Ganti dengan URL GitHub Pages Anda)
+url: "https://[username].github.io/[repository-name]" 
+
+# Penulis atau pemilik situs
+author: Ihab Hasanain Akmal
+
+# =============================================================
+# Navigasi (Untuk ditampilkan di menu)
+# =============================================================
+nav:
+  - title: Beranda
+    url: /
+  - title: Tentang Saya
+    url: /#about
+  - title: Proyek
+    url: /#projects
+  - title: Prestasi
+    url: /#achievements
+  - title: Kontak
+    url: /#contact
+
+# =============================================================
+# Pengaturan Build
+# =============================================================
+# Exclude: File atau folder yang tidak perlu diproses oleh Jekyll
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - LICENSE
+  - .gitignore
+
+# Theme: Anda bisa menggunakan tema Jekyll, tapi di sini kita akan menggunakan
+# custom HTML/CSS (Tailwind) untuk kontrol penuh.
+# theme: jekyll-theme-minimal
+
+# =============================================================
+# Variabel Kustom (Untuk mempermudah pembaruan hyperlink)
+# =============================================================
+# Ganti dengan URL akun media sosial/dokumen Anda
+social_links:
+  linkedin: "https://linkedin.com/in/IhabHasanain" # Ganti dengan link LinkedIn Anda
+  email: "mailto:ihabb.hasanain@gmail.com"
+  whatsapp: "https://wa.me/6285117026096" # Nomor WhatsApp Anda
+
+# Hyperlink ke dokumen yang sudah Anda sediakan
+document_links:
+  cv: "/assets/CV ATS IHAB HASANAIN AKMAL.pdf" # Pastikan file ada di folder /assets
+  portfolio_pdf: "/assets/Portfolio.pdf" # Pastikan file ada di folder /assets
